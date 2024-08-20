@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISPATCH6 - Vouches Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/eurochapo.png" type="image/png">
+    <style>
+        /* Styles CSS */
+
+        body {
+            background: linear-gradient(135deg, #121212, #000000);
+            color: #fff;
+            font-family: 'Mulish', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-top: 20px;
+            position: relative;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .cross {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 2;
+            color: #fff;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .cross:hover {
+            transform: rotate(90deg);
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #8a2be2, #ff00ff);
+            text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+            z-index: 1;
+            position: relative;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+        }
+
+        h2,
+        .section-title {
+            color: #fff;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        p.section-description,
+        p.section-address {
+            color: #ccc;
+            font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .image-container {
+            max-width: 400px;
+            margin-right: 20px;
+        }
+
+        img.section-img,
+        img.section-img-vouch,
+        img.section-img-colis {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            background: linear-gradient(45deg, #8a2be2, #ff00ff);
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 8px 16px rgba(138, 43, 226, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #8a2be2, #ff00ff);
+            transform: scale(1);
+            box-shadow: 0 12px 24px rgba(138, 43, 226, 0.4);
+        }
+
+        button img {
+            width: 25px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .discord-section,
+        .vouches-section,
+        .colis-section,
+        .hand-delivery-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.7s, transform 0.7s;
+            padding: 30px;
+            border-radius: 20px;
+            background: linear-gradient(45deg, #1c1c1c, #222);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+        }
+
+        .discord-section:hover,
+        .vouches-section:hover,
+        .colis-section:hover,
+        .hand-delivery-section:hover {
+            box-shadow: 0 0 30px rgba(138, 43, 226, 1);
+        }
+
+        .discord-section.show,
+        .vouches-section.show,
+        .colis-section.show,
+        .hand-delivery-section.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Media Query pour les appareils mobiles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+                padding: 15px;
+            }
+
+            h2,
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            p.section-description,
+            p.section-address {
+                font-size: 1em;
+            }
+
+            img.section-img,
+            img.section-img-vouch,
+            img.section-img-colis {
+                border-radius: 10px;
+            }
+
+            button {
+                padding: 12px 20px;
+                border-radius: 20px;
+            }
+
+            button img {
+                width: 20px;
+                height: auto;
+                margin-right: 10px;
+            }
+
+            .cross {
+                top: calc(100% + 20px);
+                left: 20px;
+            }
+
+            .discord-section,
+            .vouches-section,
+            .colis-section,
+            .hand-delivery-section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Animation de la pluie de confettis */
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            font-size: 2em;
+            color: #e60073;
+            opacity: 1;
+            animation: confetti-fall linear infinite;
+            pointer-events: none;
+             }
+        } 
+body:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #121212, #000000);
+    z-index: 9999;
+    animation: fadeOutBackground 2s ease-out forwards;
+}
+
+@keyframes fadeOutBackground {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.discord-section,
+.vouches-section,
+.colis-section,
+.hand-delivery-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translateY(20px); /* Initial position slightly below */
+    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.discord-section.show,
+.vouches-section.show,
+.colis-section.show,
+.hand-delivery-section.show {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+}
+
+.discord-section {
+    animation: slideInLeft 1.5s ease-out 0.2s forwards;
+}
+
+.vouches-section {
+    animation: slideInRight 1.5s ease-out 0.4s forwards;
+}
+
+.colis-section {
+    animation: slideInLeft 1.5s ease-out 0.6s forwards;
+}
+
+.hand-delivery-section {
+    animation: slideInRight 1.5s ease-out 0.8s forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Start from left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Move to original position */
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px); /* Start from right */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Move to original position */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="./index.html" target="_blank" rel="noopener noreferrer" class="cross">❌</a>
+    <span class="copyright">ONLY REAL VENDOR IS @DISPATCH6 ON TELEGRAM</span>
+        <h2>Dispatch6</h2>
+    </header>
+
+    <main>
+    
+        <!-- Vouches Section with a button -->
+        <div class="vouches-section show">
+            <div class="image-container">
+                <img class="section-img-vouch" src="./images/photo_2024-08-16_01-31-39.jpg" alt="Vouches Image">
+            </div>
+            <div>
+                <h2 class="section-title">Vouches 💬</h2>
+                <p class="section-description">We have a channel listing the reviews of some clients.<br>
+                <br>
+                •Customer satisfaction<br>
+                •Product image<br>
+                •Product delivery<br>
+                •Experience with the product</p>
+                <button onclick="window.location.href='https://t.me/+wXtRJlRtqxo5ZmY0'">
+                    <img src="images/Telegram_Messenger.png" alt="Telegram Icon"> Telegram Proofs
+                </button>
+            </div>
+        </div>
+    
+        <!-- New Colis Section -->
+        <div class="colis-section show">
+            <div class="image-container">
+                <img class="section-img-colis" src="./images/photo_2024-08-16_18-41-53.jpg" alt="Colis Image">
+            </div>
+            <div>
+                <h2 class="section-title">Parcels 📦</h2>
+                <p class="section-description">We show you the entire process of shipping parcels with bills.<br>
+                <br>
+                •Shipping<br>
+                •Shipping method<br>
+                •Packaging<br>
+                •Customs clearance<br>
+                •Security<br>
+                •Tracking<br>
+                •Reception</p>
+            </div>
+        </div>
+    
+        <!-- Hand Delivery Section at the bottom -->
+        <div class="hand-delivery-section show">
+            <div class="image-container">
+                <img class="section-img" src="images/map.png" alt="Hand Delivery Image">
+            </div>
+            <div>
+                <h2 class="section-title">Hand Delivery 🤝</h2>
+                <p class="section-description">If you are really afraid of ordering, opt for hand delivery!</p>
+                <p class="section-address">📍 All. des Vikings, 74120 Megève</p>
+            </div>
+        </div>
+        
+        <span class="copyright">_</span>
+    
+        <!-- Confetti Animation -->
+        <div class="confetti">🎉</div>
+    </main>
+    
+
+    <!-- Script pour la génération aléatoire des confettis -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fonction pour créer des confettis
+            function createConfetti() {
+                const confetti = document.createElement('div');
+                confetti.innerHTML = '🎉';
+                confetti.className = 'confetti';
+
+                // Position aléatoire sur la page
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.animationDuration = (Math.random() * 2 + 1) + 's';
+
+                // Ajoute les confettis à la page
+                document.body.appendChild(confetti);
+
+                // Supprime les confettis après l'animation
+                confetti.addEventListener('animationiteration', function () {
+                    confetti.remove();
+                });
+            }
+
+            // Crée 20 confettis après le chargement complet de la page
+            for (let i = 0; i < 100; i++) {
+                createConfetti();
+            }
+
+            // Ajoute un événement de clic pour rediriger l'utilisateur vers la page d'accueil
+            document.querySelector('.back-to-index').addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+
+</html>

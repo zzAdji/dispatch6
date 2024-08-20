@@ -1,0 +1,2187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  body {
+    font-family: "Lexend", sans-serif;
+    font-size: 17px;
+  }
+  body .wrapper {
+    max-width: 1270px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body header {
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+  body header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+  body header nav img {
+    width: 75px;
+  }
+  body header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+  }
+  body header nav ul li {
+    transition: 0.3s;
+  }
+  body header nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    transition: 0.3s;
+  }
+  body header nav ul li:hover a {
+    font-weight: 700;
+  }
+  body header nav ul li.active a {
+    font-weight: 700;
+    position: relative;
+  }
+  body header nav ul li.active a::after {
+    display: block;
+    content: "";
+    width: 30%;
+    height: 3px;
+    background: black;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  body .copyright {
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    padding: 10px 0px;
+    font-weight: 300;
+    font-size: 12px;
+  }
+  body main #cart-footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 25px;
+  }
+  body main #cart-footer .cart-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1270px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body main #cart-footer .cart-wrapper .left {
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+  body main #cart-footer .cart-wrapper .right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  body main #cart-footer .cart-wrapper .right a {
+    background: rgb(26, 26, 26);
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 30px;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  body main #finished-footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 25px;
+  }
+  body main #finished-footer .finished-wrapper {
+    max-width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  body main #finished-footer .finished-wrapper .left {
+    width: 100%;
+  }
+  body main #finished-footer .finished-wrapper .left p {
+    text-align: center;
+  }
+  body main #finished-footer .finished-wrapper .left p span {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+  }
+  body main #finished-footer .finished-wrapper .right {
+    width: 100%;
+  }
+  body main #finished-footer .finished-wrapper .right .btnContactTelegram {
+    background: rgb(26, 26, 26);
+    display: block;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 15px 0px;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  body main section {
+    margin-top: 50px;
+  }
+  body main section .mobile-title {
+    display: none !important;
+  }
+  body main section .title,
+  body main section .mobile-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  body main section .title .left,
+  body main section .title .x-left,
+  body main section .mobile-title .left,
+  body main section .mobile-title .x-left {
+    display: flex;
+    align-items: left;
+    gap: 15px;
+    flex-direction: column-reverse;
+  }
+  body main section .title .left .reviews,
+  body main section .title .x-left .reviews,
+  body main section .mobile-title .left .reviews,
+  body main section .mobile-title .x-left .reviews {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  body main section .title .left .reviews .stars,
+  body main section .title .x-left .reviews .stars,
+  body main section .mobile-title .left .reviews .stars,
+  body main section .mobile-title .x-left .reviews .stars {
+    display: flex;
+    gap: 2.5px;
+    border-radius: 10px;
+  }
+  body main section .title .left .reviews .stars ion-icon,
+  body main section .title .x-left .reviews .stars ion-icon,
+  body main section .mobile-title .left .reviews .stars ion-icon,
+  body main section .mobile-title .x-left .reviews .stars ion-icon {
+    font-size: 12.5px;
+    background-color: rgb(105, 201, 30);
+    color: white;
+    padding: 5px;
+  }
+  body main section .title .left .reviews .text,
+  body main section .title .x-left .reviews .text,
+  body main section .mobile-title .left .reviews .text,
+  body main section .mobile-title .x-left .reviews .text {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+  body main section .title .left .reviews .text a,
+  body main section .title .x-left .reviews .text a,
+  body main section .mobile-title .left .reviews .text a,
+  body main section .mobile-title .x-left .reviews .text a {
+    color: black;
+  }
+  body main section .title .right .overview,
+  body main section .mobile-title .right .overview {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 15px 30px 15px 20px;
+    position: relative;
+    text-align: right;
+  }
+  body main section .title .right .overview .arrow,
+  body main section .mobile-title .right .overview .arrow {
+    position: absolute;
+    width: 17.5px;
+    right: 10px;
+    top: 40%;
+    transform: rotate(225deg) scaleY(-1);
+  }
+  body main section .title .right .overview .pay,
+  body main section .title .right .overview .receive,
+  body main section .mobile-title .right .overview .pay,
+  body main section .mobile-title .right .overview .receive {
+    font-size: 13px;
+    font-weight: 300;
+  }
+  body main section .title .right .overview .pay mark,
+  body main section .title .right .overview .receive mark,
+  body main section .mobile-title .right .overview .pay mark,
+  body main section .mobile-title .right .overview .receive mark {
+    font-size: 15px;
+    background-color: transparent;
+    font-weight: 700;
+  }
+  body main section .package-customizer {
+    margin-top: 25px;
+  }
+  body main section .package-customizer .panel {
+    text-align: center;
+  }
+  body main section .package-customizer .panel.package-types {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  body main section .package-customizer .panel .section-title {
+    position: relative;
+    font-weight: 300;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    /*   background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  
+  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px; */
+  }
+  body main section .package-customizer .panel .section-title:after {
+    display: block;
+    content: "";
+    width: 50px;
+    height: 3px;
+    border-radius: 15px;
+    background: black;
+    position: absolute;
+    bottom: -10px;
+    transform: translate(-50%, 50%);
+    left: 50%;
+  }
+  body main section .package-customizer .panel .section-title mark {
+    color: black;
+    background: transparent;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  body main section .package-customizer .panel .money-text {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  body main section .package-customizer .panel .subtitle {
+    text-align: left;
+    font-weight: 300;
+    font-size: 13px;
+  }
+  body main section .package-customizer .panel .type-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+  body main section .package-customizer .panel .type-container .type-item {
+    width: 200px;
+    height: 175px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+  }
+  body main section .package-customizer .panel .type-container .type-item .img {
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    margin: 10px;
+    pointer-events: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    filter: grayscale(1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  body main section .package-customizer .panel .type-container .type-item .img.b10 {
+    background-image: url("../images/10back.png");
+  }
+  body main section .package-customizer .panel .type-container .type-item .img.b20 {
+    background-image: url("../images/20back.png");
+  }
+  body main section .package-customizer .panel .type-container .type-item .img.b50 {
+    background-image: url("../images/50back.png");
+    background-position: bottom;
+  }
+  body main section .package-customizer .panel .type-container .type-item span {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    pointer-events: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    transition: 0.3s;
+    margin-bottom: 10px;
+    pointer-events: none;
+    user-select: none;
+  }
+  body main section .package-customizer .panel .type-container .type-item:hover {
+    border: 1px solid black;
+  }
+  body main section .package-customizer .panel .type-container .type-item.active {
+    background-color: black;
+    color: white;
+  }
+  body main section .package-customizer .panel .type-container .type-item.active .img {
+    filter: grayscale(0);
+  }
+  body main section .package-customizer .panel .type-container .type-item.out-of-stock {
+    background-color: rgba(157, 157, 157, 0.88);
+  }
+  body main section .package-customizer .panel .type-container .type-item .out-of-stock-text {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: white; /* Texte en rouge */
+    padding: 5px 0px;
+    background: rgba(255, 0, 0, 0.88); /* Rouge */
+  }
+  
+  body main section .package-customizer .panel .package-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  body main section .package-customizer .panel .package-container .package-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12.5px 17px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+  }
+  body main section .package-customizer .panel .package-container .package-item:hover {
+    border: 1px outset black;
+  }
+  body main section .package-customizer .panel .package-container .package-item.active {
+    color: white;
+    background: black;
+  }
+  body main section .package-customizer .panel .package-container .package-item.special {
+    color: rgb(104, 104, 104);
+    background: rgba(255, 219, 15, 0.6);
+    border: 1px solid rgba(255, 228, 71, 0.3);
+  }
+  body main section .package-customizer .panel .package-container .package-item.special.active {
+    box-shadow: 0 4px 30px rgb(239, 226, 15);
+    color: black;
+    background-color: rgb(255, 220, 15);
+  }
+  body main section .package-customizer .panel .package-container .package-item span {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    pointer-events: none;
+  }
+  body main section .package-customizer .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  body main section .package-customizer .bottom .title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+  }
+  body main section .package-customizer .bottom .title p {
+    text-align: center;
+    width: 100%;
+    font-weight: 300;
+    font-size: 14px;
+    /*  background: rgba(255, 255, 255, 0.2);
+                               border-radius: 10px;
+                               box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  
+  
+                               border: 1px solid rgba(255, 255, 255, 0.3);
+                               padding: 10px;
+    */
+  }
+  body main section .package-customizer .bottom .title p:after {
+    display: block;
+    content: "";
+    width: 50px;
+    height: 3px;
+    border-radius: 15px;
+    background: black;
+    position: absolute;
+    bottom: -10px;
+    transform: translate(-50%, 50%);
+    left: 50%;
+  }
+  body main section .package-customizer .bottom .title p mark {
+    color: black;
+    background: transparent;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  body main section .package-customizer .bottom .content {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 35px;
+    padding-top: 17.5px;
+  }
+  body main section .package-customizer .bottom .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+    width: 60%;
+  }
+  body main section .package-customizer .bottom .left .bill-types {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  body main section .package-customizer .bottom .left .summary {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 14px;
+  }
+  body main section .package-customizer .bottom .left .summary .summary-title {
+    font-weight: 300;
+    font-size: 13px;
+  }
+  body main section .package-customizer .bottom .left .summary .summary-context {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  body main section .package-customizer .bottom .left .summary .summary-context .orderid {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 11px;
+    font-weight: 300;
+  }
+  body main section .package-customizer .bottom .left .summary .summary-context mark {
+    font-size: 15px;
+    background-color: transparent;
+    font-weight: 700;
+    padding: 0px 5px;
+  }
+  body main section .package-customizer .bottom .left .summary .stock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    color: #54c63a;
+    margin-top: 10px;
+  }
+  body main section .package-customizer .bottom .left .summary .stock .greendot {
+    background: #54c63a;
+    height: 12px;
+    width: 12px;
+    border-radius: 20px;
+    animation: greendot 2s linear infinite;
+    transform: scale(1);
+  }
+  body main section .package-customizer .bottom .left .summary .country {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    margin-top: 15px;
+  }
+  body main section .package-customizer .bottom .left .summary .country i {
+    height: 12px;
+    width: 12px;
+    border-radius: 20px;
+  }
+  body main section .package-customizer .bottom .left .btncart {
+    background: rgb(26, 26, 26);
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+  body main section .package-customizer .bottom .left .btncart ion-icon {
+    font-size: 15px;
+  }
+  body main section .package-customizer .bottom .right {
+    height: 100%;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    align-items: center;
+    padding: 20px;
+  }
+  body main section .package-customizer .bottom .right span {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  body main section .package-customizer .bottom .right img {
+    width: 500px;
+  }
+  body main section .package-customizer .bottom .right .back {
+    animation: invertion 3s ease infinite;
+    filter: invert(0);
+  }
+  @keyframes invertion {
+    0% {
+      filter: invert(0);
+    }
+    57% {
+      filter: invert(0);
+    }
+    60% {
+      filter: invert(0.75);
+    }
+    100% {
+      filter: invert(1);
+    }
+  }
+  body main .reviews h2 {
+    margin-bottom: 30px;
+  }
+  body main .reviews .container {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+    margin-right: 5px;
+    padding-bottom: 25px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  body main .reviews .container .tile {
+    gap: 15px;
+    justify-content: space-between;
+    position: relative;
+  }
+  body main .reviews .container .tile:nth-child(odd) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 15px;
+    transition: all 0.25s ease-in-out;
+  }
+  body main .reviews .container .tile:nth-child(odd) .review-text {
+    flex-direction: column-reverse;
+  }
+  body main .reviews .container .tile:nth-child(even) {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+  }
+  body main .reviews .container .tile:nth-child(even) .review-text {
+    flex-direction: column;
+  }
+  body main .reviews .container .tile .image-device {
+    height: 350px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 10px;
+  }
+  body main .reviews .container .tile .review-text {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  body main .reviews .container .tile .review-text .user-information p {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  body main .reviews .container .tile .review-text .user-information p img {
+    width: 25px;
+  }
+  body main .reviews .container .tile .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  body main .reviews .container .tile .bottom .country {
+    color: #919191;
+  }
+  body main .reviews .container .tile .bottom .stars {
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+  body main .reviews .container .tile .bottom .stars ion-icon {
+    color: rgb(255, 165, 0);
+  }
+  body main .reviews .container .tile:last-child .fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.0196078431), white);
+  }
+  @media screen and (max-width: 650px) {
+    body main .reviews .container {
+      display: block;
+    }
+    body main .reviews .tile {
+      margin-bottom: 1rem;
+    }
+  }
+  body main .faq h2,
+  body main .finished h2 {
+    margin-bottom: 20px;
+  }
+  body main .faq .accordion,
+  body main .finished .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  body main .faq .accordion .accordion-item,
+  body main .finished .accordion .accordion-item {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0 15px;
+    /*                 button[aria-expanded='true'] {
+    } */
+  }
+  body main .faq .accordion button,
+  body main .finished .accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: black;
+    font-size: 15px;
+    font-weight: 300;
+    border: none;
+    background: none;
+    outline: none;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Lexend", sans-serif;
+  }
+  body main .faq .accordion button:hover, body main .faq .accordion button:focus,
+  body main .finished .accordion button:hover,
+  body main .finished .accordion button:focus {
+    cursor: pointer;
+    color: rgb(124, 124, 124);
+  }
+  body main .faq .accordion button:hover::after, body main .faq .accordion button:focus::after,
+  body main .finished .accordion button:hover::after,
+  body main .finished .accordion button:focus::after {
+    cursor: pointer;
+    color: black;
+  }
+  body main .faq .accordion button .accordion-title,
+  body main .finished .accordion button .accordion-title {
+    padding: 10px 0px;
+  }
+  body main .faq .accordion button ion-icon,
+  body main .finished .accordion button ion-icon {
+    font-size: 25px;
+  }
+  body main .faq .accordion button[aria-expanded=true],
+  body main .finished .accordion button[aria-expanded=true] {
+    color: black;
+  }
+  body main .faq .accordion button[aria-expanded=true] .icon::after,
+  body main .finished .accordion button[aria-expanded=true] .icon::after {
+    width: 0;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content {
+    opacity: 1;
+    max-height: 100%;
+    transition: all 0.3s linear;
+    will-change: opacity, max-height;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .stand-alone,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .stand-alone {
+    padding: 20px 5px;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .quality-container,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .quality-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 40px;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    padding: 40px;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 20px 0px 20px;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .text,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: justify;
+    align-items: start;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .text mark,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .text mark {
+    background-color: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .text .title,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .text .title {
+    font-weight: 600;
+    font-size: 25px;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .text p,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .text p {
+    font-weight: 300;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .img,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .img {
+    border-radius: 10px;
+    min-width: 150px;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .monogramimg,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .monogramimg {
+    width: 25%;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .signatureimg,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .signatureimg {
+    width: 100px;
+    max-height: 300px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body main .faq .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .serialimg,
+  body main .finished .accordion button[aria-expanded=true] + .accordion-content .quality-container .quality-item .serialimg {
+    width: 30%;
+  }
+  body main .faq .accordion .accordion-content,
+  body main .finished .accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 10ms linear;
+    will-change: opacity, max-height;
+    /* p {
+        font-size: 1rem;
+        font-weight: 300;
+        margin: 2em 0;
+    } */
+  }
+  body main .faq .accordion .accordion-content #order,
+  body main .finished .accordion .accordion-content #order {
+    background-color: black !important;
+    color: white !important;
+  }
+  body main .finished .wrapper {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  body main .finished .wrapper h3 {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  body main .finished .wrapper h3 mark {
+    background: none;
+    font-weight: 300;
+  }
+  body main .finished .wrapper .breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+  }
+  body main .finished .wrapper .breadcrumb ion-icon {
+    font-size: 11px;
+  }
+  body main .finished .wrapper .breadcrumb span {
+    font-size: 11px;
+    font-weight: 300;
+  }
+  body main .finished .wrapper .breadcrumb span.current {
+    font-weight: 600;
+  }
+  body main .finished .wrapper .title .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+  body main .finished .wrapper .title .header .back {
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  body main .finished .wrapper .order-id-holder {
+    background: rgb(26, 26, 26);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(150, 150, 150, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px 10px 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+  }
+  body main .finished .wrapper .order-id-holder h2 {
+    transition: opacity 0.3s ease-in-out;
+  }
+  body main .finished .wrapper .order-id-holder .code {
+    display: flex;
+    flex-direction: row;
+  }
+  body main .finished .wrapper .order-id-holder .code input {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 5px 10px;
+    display: block;
+    text-align: center;
+    /*  border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; */
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: "Lexend";
+    font-weight: 600;
+    border: 1px solid black;
+  }
+  body main .finished .wrapper .order-id-holder .code input::-moz-selection {
+    background: rgb(0, 0, 0);
+    color: white;
+  }
+  body main .finished .wrapper .order-id-holder .code input::selection {
+    background: rgb(0, 0, 0);
+    color: white;
+  }
+  body main .finished .wrapper .order-id-holder .code input:focus, body main .finished .wrapper .order-id-holder .code input:active {
+    outline: 0;
+    border: 0;
+  }
+  body main .finished .wrapper .order-id-holder .code .input {
+    position: relative;
+  }
+  body main .finished .wrapper .order-id-holder .code ion-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    color: rgba(0, 0, 0, 0.3490196078);
+  }
+  body main .finished .wrapper .order-id-holder .code a {
+    background: black;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    font-family: "Lexend";
+    text-transform: uppercase;
+    border: 1px solid black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-decoration: none;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+  }
+  body main .finished .wrapper .instructions {
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  body main .finished .wrapper .instructions .left {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  body main .finished .wrapper .instructions .left .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(150, 150, 150, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: instructions 2s ease infinite;
+  }
+  body main .finished .wrapper .instructions .left .step .number {
+    font-size: 30px;
+    font-weight: 500;
+    color: black;
+    padding: 0px 12.5px;
+  }
+  body main .finished .wrapper .instructions .left .step .q-p {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  body main .finished .wrapper .instructions .left .step .q-p .text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: uppercase;
+    flex-direction: column;
+    text-align: center;
+  }
+  body main .finished .wrapper .instructions .left .step .q-p .text a {
+    color: rgb(255, 255, 255);
+    background: rgb(26, 26, 26);
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px !important;
+    box-shadow: none !important;
+  }
+  body main .finished .wrapper .instructions .left .step .q-p .text .btnCopy,
+  body main .finished .wrapper .instructions .left .step .q-p .text .btnTelegram {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 15px !important;
+  }
+  body main .finished .wrapper .instructions .left .step .q-p .orderId {
+    background-color: black;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    text-align: center;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  body main .finished .wrapper .instructions .right {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+  }
+  body main .finished .wrapper .instructions .right ion-icon {
+    font-size: 100px;
+    color: rgba(0, 0, 0, 0.0784313725);
+  }
+  body main .finished .wrapper .summary-context {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 13px;
+    font-weight: 300;
+    width: 100%;
+  }
+  body main .finished .wrapper .summary-context .header {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+  body main .finished .wrapper .summary-context .header .orderid {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    text-align: center;
+  }
+  body main .finished .wrapper .summary-context .q-i {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  body main .finished .wrapper .summary-context .q-i .package,
+  body main .finished .wrapper .summary-context .q-i .shipping {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  body main .finished .wrapper .summary-context .q-i .package .subtitle,
+  body main .finished .wrapper .summary-context .q-i .shipping .subtitle {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  body main .finished .wrapper .summary-context .q-i .package .info,
+  body main .finished .wrapper .summary-context .q-i .shipping .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  body main .finished .wrapper .summary-context .q-i .package .info mark,
+  body main .finished .wrapper .summary-context .q-i .shipping .info mark {
+    font-weight: 600 !important;
+    font-size: 18px;
+    background-color: transparent;
+    padding: 0px 5px;
+  }
+  body main .finished .wrapper .summary-context .extraInfo {
+    margin-top: 15px;
+    color: lightgray;
+  }
+  body main .finished .wrapper .summary-context .extraInfo span {
+    display: block;
+    color: #54c63a;
+    animation: extraInfo 2s linear infinite;
+  }
+  body main .finished .wrapper .btnContactTelegram {
+    background: rgb(26, 26, 26);
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 15px 0px;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  body main .cart .wrapper {
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  body main .cart .wrapper .breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+  }
+  body main .cart .wrapper .breadcrumb ion-icon {
+    font-size: 11px;
+  }
+  body main .cart .wrapper .breadcrumb span {
+    font-size: 11px;
+    font-weight: 300;
+  }
+  body main .cart .wrapper .breadcrumb span.current {
+    font-weight: 600;
+  }
+  body main .cart .wrapper .title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  body main .cart .wrapper .title .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  body main .cart .wrapper .title .header .back {
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  body main .cart .wrapper .title .topay {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+  }
+  body main .cart .wrapper .title .topay .range {
+    width: 100%;
+    height: 5px;
+    background: #e8e8e8;
+    border-radius: 20px;
+    position: relative;
+  }
+  body main .cart .wrapper .title .topay .range .filledin {
+    background: red;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  body main .cart .wrapper .title .topay .range .filledin.completed {
+    background: #00d100;
+    width: 100% !important;
+  }
+  body main .cart .wrapper .title .topay span {
+    font-size: 16px;
+    font-weight: 300;
+  }
+  body main .cart .wrapper .title .topay .toPayForFreeShipping,
+  body main .cart .wrapper .title .topay mark {
+    background: none;
+    font-weight: 600;
+  }
+  body main .cart .wrapper .overview {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    /*                     .footer-text {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 13px;
+        justify-content: center;
+        margin-top: 15px;
+    } */
+  }
+  body main .cart .wrapper .overview .summary-context {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 13px;
+    font-weight: 300;
+    width: 60%;
+  }
+  body main .cart .wrapper .overview .summary-context .subtitle {
+    padding: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+  }
+  body main .cart .wrapper .overview .summary-context mark {
+    font-size: 15px;
+    background-color: transparent;
+    font-weight: 700;
+    padding: 0px 5px;
+  }
+  body main .cart .wrapper .overview .stock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    color: #54c63a;
+    margin-top: 10px;
+  }
+  body main .cart .wrapper .overview .stock .greendot {
+    background: #54c63a;
+    height: 12px;
+    width: 12px;
+    border-radius: 20px;
+    animation: greendot 2s linear infinite;
+    transform: scale(1);
+  }
+  body main .cart .wrapper .overview .country {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    margin-top: 15px;
+  }
+  body main .cart .wrapper .overview .country i {
+    height: 12px;
+    width: 12px;
+    border-radius: 20px;
+  }
+  body main .cart .wrapper .order-section,
+  body main .cart .wrapper .shipping-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  body main .cart .wrapper .order-section .shipping-form,
+  body main .cart .wrapper .shipping-section .shipping-form {
+    padding: 0 !important;
+  }
+  body main .cart .wrapper .order-section .shipping-form .breadcrumb,
+  body main .cart .wrapper .shipping-section .shipping-form .breadcrumb {
+    margin: 15px 15px 0px 15px !important;
+  }
+  body main .cart .wrapper .order-section .order-form,
+  body main .cart .wrapper .order-section .shipping-form,
+  body main .cart .wrapper .shipping-section .order-form,
+  body main .cart .wrapper .shipping-section .shipping-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 15px 20px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 11;
+  }
+  body main .cart .wrapper .order-section .order-form .contact,
+  body main .cart .wrapper .order-section .shipping-form .contact,
+  body main .cart .wrapper .shipping-section .order-form .contact,
+  body main .cart .wrapper .shipping-section .shipping-form .contact {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    margin: 0px 10px 10px 10px;
+  }
+  body main .cart .wrapper .order-section .order-form .contact .p-o,
+  body main .cart .wrapper .order-section .shipping-form .contact .p-o,
+  body main .cart .wrapper .shipping-section .order-form .contact .p-o,
+  body main .cart .wrapper .shipping-section .shipping-form .contact .p-o {
+    display: flex;
+    /* span,
+    mark {
+        background: transparent;
+        font-size: 15px;
+        font-weight: 600;
+    } */
+  }
+  body main .cart .wrapper .order-section .order-form .contact .p-o span,
+  body main .cart .wrapper .order-section .shipping-form .contact .p-o span,
+  body main .cart .wrapper .shipping-section .order-form .contact .p-o span,
+  body main .cart .wrapper .shipping-section .shipping-form .contact .p-o span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+  body main .cart .wrapper .order-section .order-form .contact .p-o span .inline,
+  body main .cart .wrapper .order-section .shipping-form .contact .p-o span .inline,
+  body main .cart .wrapper .shipping-section .order-form .contact .p-o span .inline,
+  body main .cart .wrapper .shipping-section .shipping-form .contact .p-o span .inline {
+    display: flex;
+    gap: 5px;
+  }
+  @media (max-width: 930px) {
+    body main .cart .wrapper .order-section .order-form .contact .p-o span,
+    body main .cart .wrapper .order-section .shipping-form .contact .p-o span,
+    body main .cart .wrapper .shipping-section .order-form .contact .p-o span,
+    body main .cart .wrapper .shipping-section .shipping-form .contact .p-o span {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  body main .cart .wrapper .order-section .order-form .contact span,
+  body main .cart .wrapper .order-section .shipping-form .contact span,
+  body main .cart .wrapper .shipping-section .order-form .contact span,
+  body main .cart .wrapper .shipping-section .shipping-form .contact span {
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  body main .cart .wrapper .order-section .order-form .contact span.shippingTo, body main .cart .wrapper .order-section .order-form .contact span.emailingTo, body main .cart .wrapper .order-section .order-form .contact span.packagesToPayType, body main .cart .wrapper .order-section .order-form .contact span.shippingWith, body main .cart .wrapper .order-section .order-form .contact span.shippingWithDays,
+  body main .cart .wrapper .order-section .order-form .contact span mark,
+  body main .cart .wrapper .order-section .shipping-form .contact span.shippingTo,
+  body main .cart .wrapper .order-section .shipping-form .contact span.emailingTo,
+  body main .cart .wrapper .order-section .shipping-form .contact span.packagesToPayType,
+  body main .cart .wrapper .order-section .shipping-form .contact span.shippingWith,
+  body main .cart .wrapper .order-section .shipping-form .contact span.shippingWithDays,
+  body main .cart .wrapper .order-section .shipping-form .contact span mark,
+  body main .cart .wrapper .shipping-section .order-form .contact span.shippingTo,
+  body main .cart .wrapper .shipping-section .order-form .contact span.emailingTo,
+  body main .cart .wrapper .shipping-section .order-form .contact span.packagesToPayType,
+  body main .cart .wrapper .shipping-section .order-form .contact span.shippingWith,
+  body main .cart .wrapper .shipping-section .order-form .contact span.shippingWithDays,
+  body main .cart .wrapper .shipping-section .order-form .contact span mark,
+  body main .cart .wrapper .shipping-section .shipping-form .contact span.shippingTo,
+  body main .cart .wrapper .shipping-section .shipping-form .contact span.emailingTo,
+  body main .cart .wrapper .shipping-section .shipping-form .contact span.packagesToPayType,
+  body main .cart .wrapper .shipping-section .shipping-form .contact span.shippingWith,
+  body main .cart .wrapper .shipping-section .shipping-form .contact span.shippingWithDays,
+  body main .cart .wrapper .shipping-section .shipping-form .contact span mark {
+    background: transparent;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  body main .cart .wrapper .order-section .order-form .subtitle,
+  body main .cart .wrapper .order-section .shipping-form .subtitle,
+  body main .cart .wrapper .shipping-section .order-form .subtitle,
+  body main .cart .wrapper .shipping-section .shipping-form .subtitle {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0px 10px;
+  }
+  body main .cart .wrapper .order-section .order-form .duo,
+  body main .cart .wrapper .order-section .shipping-form .duo,
+  body main .cart .wrapper .shipping-section .order-form .duo,
+  body main .cart .wrapper .shipping-section .shipping-form .duo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  body main .cart .wrapper .order-section .order-form .duo .inputfield,
+  body main .cart .wrapper .order-section .shipping-form .duo .inputfield,
+  body main .cart .wrapper .shipping-section .order-form .duo .inputfield,
+  body main .cart .wrapper .shipping-section .shipping-form .duo .inputfield {
+    width: 50%;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield,
+  body main .cart .wrapper .order-section .shipping-form .inputfield,
+  body main .cart .wrapper .shipping-section .order-form .inputfield,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield {
+    position: relative;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder {
+    position: relative;
+    background: white;
+    z-index: 9999;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .footer,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .footer,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .footer,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .footer {
+    padding: 10px 15px;
+    background: rgba(109, 109, 109, 0.069);
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .footer svg,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .footer svg,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .footer svg,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .footer svg {
+    fill: #707070;
+    display: block;
+    width: 100px;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .header,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .header,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .header,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .header .subtitle,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .header .subtitle,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .header .subtitle,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .header .subtitle {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .header ion-icon,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .header ion-icon,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .header ion-icon,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .header ion-icon {
+    cursor: pointer;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .autocomplete-container,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .autocomplete-container,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 150px;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar {
+    width: 5px;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar-track,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar-track,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar-track,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar-thumb,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar-thumb,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar-thumb,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container::scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item {
+    cursor: pointer;
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 15px;
+    transition: all 0.3s;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item mark,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item mark,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item mark,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item mark {
+    background-color: transparent;
+    font-weight: 700;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item:hover,
+  body main .cart .wrapper .order-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item:hover,
+  body main .cart .wrapper .shipping-section .order-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item:hover,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield .autocomplete-holder .autocomplete-container .autocomplete-item:hover {
+    background-color: rgba(109, 109, 109, 0.069);
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield input,
+  body main .cart .wrapper .order-section .order-form .inputfield select,
+  body main .cart .wrapper .order-section .order-form .inputfield select option,
+  body main .cart .wrapper .order-section .shipping-form .inputfield input,
+  body main .cart .wrapper .order-section .shipping-form .inputfield select,
+  body main .cart .wrapper .order-section .shipping-form .inputfield select option,
+  body main .cart .wrapper .shipping-section .order-form .inputfield input,
+  body main .cart .wrapper .shipping-section .order-form .inputfield select,
+  body main .cart .wrapper .shipping-section .order-form .inputfield select option,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield input,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield select,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield select option {
+    width: 100%;
+    padding: 10px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(150, 150, 150, 0.2) !important;
+    color: black;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    font-family: "Lexend", sans-serif;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield input:focus, body main .cart .wrapper .order-section .order-form .inputfield input:active,
+  body main .cart .wrapper .order-section .order-form .inputfield select:focus,
+  body main .cart .wrapper .order-section .order-form .inputfield select:active,
+  body main .cart .wrapper .order-section .order-form .inputfield select option:focus,
+  body main .cart .wrapper .order-section .order-form .inputfield select option:active,
+  body main .cart .wrapper .order-section .shipping-form .inputfield input:focus,
+  body main .cart .wrapper .order-section .shipping-form .inputfield input:active,
+  body main .cart .wrapper .order-section .shipping-form .inputfield select:focus,
+  body main .cart .wrapper .order-section .shipping-form .inputfield select:active,
+  body main .cart .wrapper .order-section .shipping-form .inputfield select option:focus,
+  body main .cart .wrapper .order-section .shipping-form .inputfield select option:active,
+  body main .cart .wrapper .shipping-section .order-form .inputfield input:focus,
+  body main .cart .wrapper .shipping-section .order-form .inputfield input:active,
+  body main .cart .wrapper .shipping-section .order-form .inputfield select:focus,
+  body main .cart .wrapper .shipping-section .order-form .inputfield select:active,
+  body main .cart .wrapper .shipping-section .order-form .inputfield select option:focus,
+  body main .cart .wrapper .shipping-section .order-form .inputfield select option:active,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield input:focus,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield input:active,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield select:focus,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield select:active,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield select option:focus,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield select option:active {
+    border: 1px solid black;
+    outline: 0;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield input::-moz-placeholder, body main .cart .wrapper .order-section .order-form .inputfield select::-moz-placeholder, body main .cart .wrapper .order-section .order-form .inputfield select option::-moz-placeholder, body main .cart .wrapper .order-section .shipping-form .inputfield input::-moz-placeholder, body main .cart .wrapper .order-section .shipping-form .inputfield select::-moz-placeholder, body main .cart .wrapper .order-section .shipping-form .inputfield select option::-moz-placeholder, body main .cart .wrapper .shipping-section .order-form .inputfield input::-moz-placeholder, body main .cart .wrapper .shipping-section .order-form .inputfield select::-moz-placeholder, body main .cart .wrapper .shipping-section .order-form .inputfield select option::-moz-placeholder, body main .cart .wrapper .shipping-section .shipping-form .inputfield input::-moz-placeholder, body main .cart .wrapper .shipping-section .shipping-form .inputfield select::-moz-placeholder, body main .cart .wrapper .shipping-section .shipping-form .inputfield select option::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.35);
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield input::placeholder,
+  body main .cart .wrapper .order-section .order-form .inputfield select::placeholder,
+  body main .cart .wrapper .order-section .order-form .inputfield select option::placeholder,
+  body main .cart .wrapper .order-section .shipping-form .inputfield input::placeholder,
+  body main .cart .wrapper .order-section .shipping-form .inputfield select::placeholder,
+  body main .cart .wrapper .order-section .shipping-form .inputfield select option::placeholder,
+  body main .cart .wrapper .shipping-section .order-form .inputfield input::placeholder,
+  body main .cart .wrapper .shipping-section .order-form .inputfield select::placeholder,
+  body main .cart .wrapper .shipping-section .order-form .inputfield select option::placeholder,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield input::placeholder,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield select::placeholder,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield select option::placeholder {
+    color: rgba(0, 0, 0, 0.35);
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield input.invalid,
+  body main .cart .wrapper .order-section .order-form .inputfield select.invalid,
+  body main .cart .wrapper .order-section .order-form .inputfield select option.invalid,
+  body main .cart .wrapper .order-section .shipping-form .inputfield input.invalid,
+  body main .cart .wrapper .order-section .shipping-form .inputfield select.invalid,
+  body main .cart .wrapper .order-section .shipping-form .inputfield select option.invalid,
+  body main .cart .wrapper .shipping-section .order-form .inputfield input.invalid,
+  body main .cart .wrapper .shipping-section .order-form .inputfield select.invalid,
+  body main .cart .wrapper .shipping-section .order-form .inputfield select option.invalid,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield input.invalid,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield select.invalid,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield select option.invalid {
+    border: 1px solid red;
+  }
+  body main .cart .wrapper .order-section .order-form .inputfield label,
+  body main .cart .wrapper .order-section .shipping-form .inputfield label,
+  body main .cart .wrapper .shipping-section .order-form .inputfield label,
+  body main .cart .wrapper .shipping-section .shipping-form .inputfield label {
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 5px;
+    display: block;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 10px;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(100, 100, 100, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    padding: 15px;
+    transition: all 0.3s;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item.selected,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item.selected,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item.selected,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item.selected {
+    background-color: rgb(26, 26, 26);
+    color: white;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item.selected img,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item.selected img,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item.selected img,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item.selected img {
+    filter: invert(1);
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item:hover,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item:hover,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item:hover,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item:hover {
+    border: 1px solid black;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item img,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item img,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item img,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item img {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    pointer-events: none;
+    width: 75px;
+    display: block;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item .text,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item .text,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item .text,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item .text {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+    width: 100%;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item .text .left,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item .text .left,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item .text .left,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item .text .left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item .text .left .title,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item .text .left .title,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item .text .left .title,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item .text .left .title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item .text .left .eta,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item .text .left .eta,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item .text .left .eta,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item .text .left .eta {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item .text .right,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item .text .right,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item .text .right,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item .text .right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: end;
+    justify-content: center;
+  }
+  body main .cart .wrapper .order-section .order-form .shipping-method-container .shipping-method-item .text .right .price,
+  body main .cart .wrapper .order-section .shipping-form .shipping-method-container .shipping-method-item .text .right .price,
+  body main .cart .wrapper .shipping-section .order-form .shipping-method-container .shipping-method-item .text .right .price,
+  body main .cart .wrapper .shipping-section .shipping-form .shipping-method-container .shipping-method-item .text .right .price {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  body main .cart .wrapper .order-section #btnNextStep,
+  body main .cart .wrapper .order-section #btnFinishOrder,
+  body main .cart .wrapper .shipping-section #btnNextStep,
+  body main .cart .wrapper .shipping-section #btnFinishOrder {
+    background: rgb(26, 26, 26);
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 15px 0px;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    z-index: 15;
+    position: sticky;
+    bottom: 15px;
+    margin-bottom: 15px;
+  }
+  @media (max-width: 1300px) {
+    body .wrapper {
+      padding: 20px;
+    }
+  }
+  @media (max-width: 1200px) {
+    body .type-container {
+      flex-wrap: wrap;
+    }
+    body .type-container .type-item {
+      width: 150px !important;
+      height: 150px !important;
+    }
+    body .bottom .left {
+      width: 100% !important;
+    }
+    body footer .wrapper .upper {
+      flex-direction: column-reverse !important;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+  }
+  @media (max-width: 930px) {
+    body header img {
+      width: 50px !important;
+    }
+    body .package-section .wrapper {
+      padding: 0px !important;
+    }
+    body .order .mobile-title {
+      display: block !important;
+    }
+    body .order .title {
+      display: none !important;
+    }
+    body section {
+      margin-top: 10px !important;
+    }
+    body .title {
+      text-align: left;
+    }
+    body .title .left {
+      width: 100%;
+      align-items: center;
+      font-size: 13px;
+    }
+    body .title .right {
+      display: none;
+    }
+    body .type-container .type-item .money-text {
+      font-size: 11px !important;
+    }
+    body .type-container .type-item span {
+      font-size: 65px !important;
+    }
+    body .reviews .container .tile {
+      flex-direction: column !important;
+    }
+    body .reviews .container .tile .review-text {
+      padding: 20px !important;
+      align-items: center;
+      text-align: center;
+      gap: 30px !important;
+    }
+    body .reviews .container .tile .review-text .bottom {
+      flex-direction: column;
+    }
+    body .package-customizer {
+      margin-top: 0 !important;
+    }
+    body .package-customizer .panel .type-container {
+      flex-wrap: wrap !important;
+      gap: 15px !important;
+      justify-content: center !important;
+    }
+    body .package-customizer .panel .type-container .type-item {
+      width: 100px !important;
+      height: 110px !important;
+    }
+    body .package-customizer .panel .type-container .type-item .img {
+      margin: 5px !important;
+    }
+    body .package-customizer .bottom .title {
+      align-items: center !important;
+      font-size: 13px;
+    }
+    body .package-customizer .bottom .content {
+      flex-direction: column-reverse !important;
+      padding-top: 0 !important;
+    }
+    body .package-customizer .bottom .content div.left {
+      padding: 0px 20px;
+    }
+    body .accordion-item {
+      padding: 0 !important;
+    }
+    body .accordion-item button {
+      padding: 10px 25px !important;
+    }
+    body .accordion-item .quality-container .quality-item {
+      flex-direction: column !important;
+      padding: 20px !important;
+    }
+    body #cart-footer .right a {
+      padding: 10px !important;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 900px) {
+    body .cart .topay {
+      align-items: start !important;
+    }
+    body .cart .topay span {
+      font-size: 13px !important;
+    }
+    body .cart .overview .summary-context {
+      display: none !important;
+    }
+    body .cart .overview .duo {
+      flex-direction: column !important;
+    }
+    body .cart .overview .inputfield {
+      width: 100% !important;
+    }
+    body .cart .contact {
+      gap: 15px !important;
+    }
+    body .cart .contact p {
+      display: flex;
+      flex-direction: column;
+    }
+    body .cart .contact p span {
+      display: block;
+      margin-top: 5px;
+    }
+    body .cart .shipping-method-container .shipping-method-item .title,
+    body .cart .shipping-method-container .shipping-method-item .eta {
+      font-size: 14px !important;
+      text-wrap: nowrap;
+    }
+    body .cart .shipping-method-container .shipping-method-item .price {
+      font-size: 16px !important;
+    }
+    body .finished .instructions .left {
+      width: 100% !important;
+      align-items: start !important;
+      flex-direction: column !important;
+    }
+    body .finished .instructions .left .text {
+      display: flex;
+      align-items: center;
+      -moz-column-gap: 5px;
+           column-gap: 5px;
+      flex-wrap: wrap;
+    }
+    body .finished .instructions .left .text a {
+      display: block !important;
+      width: -moz-fit-content !important;
+      width: fit-content !important;
+    }
+    body .finished .instructions .right {
+      display: none !important;
+    }
+    body .finished .order-id-holder h2 {
+      font-size: 18px;
+    }
+    body .finished .order-id-holder .code input {
+      max-width: 200px !important;
+    }
+    body .finished .q-i .package .info,
+    body .finished .q-i .shipping .info {
+      gap: 15px !important;
+    }
+    body .finished .q-i .package .info p span,
+    body .finished .q-i .package .info mark,
+    body .finished .q-i .shipping .info p span,
+    body .finished .q-i .shipping .info mark {
+      font-size: 13px !important;
+    }
+    body .finished .q-i .package .info p,
+    body .finished .q-i .shipping .info p {
+      display: flex;
+      align-items: start;
+      gap: 5px;
+      flex-direction: column !important;
+    }
+    body .finished .q-i .package .info mark,
+    body .finished .q-i .shipping .info mark {
+      padding: 0 !important;
+    }
+    body footer {
+      padding-bottom: 0 !important;
+    }
+    body footer .payment-methods {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    body footer .payment-methods svg {
+      width: 30px !important;
+      height: 30px !important;
+    }
+  }
+  @media (max-width: 400px) {
+    body #cart-footer .cart-wrapper {
+      flex-direction: column !important;
+      gap: 15px;
+    }
+    body #cart-footer .cart-wrapper .left,
+    body #cart-footer .cart-wrapper .right {
+      width: 100% !important;
+      flex-direction: row !important;
+      justify-content: space-between;
+    }
+    body #cart-footer .cart-wrapper .left a,
+    body #cart-footer .cart-wrapper .right a {
+      display: block;
+    }
+  }
+  body footer {
+    background-color: rgb(26, 26, 26);
+    color: white;
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 75px;
+    position: relative;
+    z-index: 999;
+  }
+  body footer .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  body footer .wrapper .upper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  body footer .wrapper .upper h2 {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-size: 22.5px;
+  }
+  body footer .wrapper .upper ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  body footer .wrapper .upper ul a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  body footer .wrapper .upper p {
+    max-width: 600px;
+  }
+  body footer .wrapper img {
+    width: 150px;
+  }
+  body footer .wrapper .payment-methods {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 30px 0px;
+  }
+  body footer .wrapper .payment-methods .payment-method svg {
+    width: 50px;
+    height: 50px;
+  }
+  body footer .wrapper p {
+    font-size: 13px;
+    font-weight: 200;
+  }
+  body::scrollbar {
+    width: 5px;
+  }
+  body::scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+  body::scrollbar-thumb {
+    background: black;
+  }
+  body .loader {
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite;
+  }
+  body .loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+    animation: prixClipFix 2s linear infinite;
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes prixClipFix {
+    0% {
+      -webkit-clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+              clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+    }
+    25% {
+      -webkit-clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+              clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+    }
+    50% {
+      -webkit-clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+              clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+    }
+    75% {
+      -webkit-clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+              clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+    }
+    100% {
+      -webkit-clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+              clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+    }
+  }
+  
+  @keyframes greendot {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 rgba(84, 198, 58, 0.5019607843);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(84, 198, 58, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 rgba(84, 198, 58, 0);
+    }
+  }
+  @keyframes instructions {
+    0% {
+      box-shadow: 0 4px 30px rgba(150, 150, 150, 0.2);
+    }
+    70% {
+      box-shadow: 0 10px 60px rgba(0, 0, 0, 0.35);
+    }
+    100% {
+      box-shadow: 0 4px 30px rgba(150, 150, 150, 0.2);
+    }
+  }
+  /* @keyframes whiteBlink {
+      0% {
+          box-shadow: 0 4px 30px rgba(255, 255, 255, 0.2);
+      }
+  
+      70% {
+          box-shadow: 0 10px 60px rgba(255, 255, 255, 0.35);
+      }
+  
+      100% {
+          box-shadow: 0 4px 30px rgba(255, 255, 255, 0.5);
+      }
+  } */
+  @keyframes extraInfo {
+    0% {
+      color: #54c63a;
+    }
+    70% {
+      color: rgba(41, 159, 15, 0.4352941176);
+    }
+    100% {
+      color: #54c63a;
+    }
+  }/*# sourceMappingURL=style.css.map */
